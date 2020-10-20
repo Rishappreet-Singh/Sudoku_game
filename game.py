@@ -1,7 +1,6 @@
 from tkinter import *
 class game:
     def __init__(self,root):
-        '''master = root'''
     	
     	#Making Main Frame in which whole page will ccome in existence
         self.base=Frame(root,width =1400, height = 50, bg = 'grey',padx=10,pady=10)
