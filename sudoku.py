@@ -97,10 +97,15 @@ class game:
         self.base=Frame(root,width =1400, height = 50, bg = 'grey',padx=10,pady=10)
         self.base.propagate(0)
 
-        time = Label(self.base,text="Time",bg='grey',font=("Verdana",15),fg='orange',padx = 300)
-        control = Label(self.base,text="Controls",bg='grey',font=("Verdana",15),fg='orange',padx = 300)
-        time.pack(side = 'left')
-        control.pack(side = 'right')
+
+        time = Label(self.base, text="Time", bg='grey', font=("Verdana", 15), fg='orange', padx=300)
+        time.pack(side='left')
+
+        def controls():
+            top = Tk()
+            top.geometry("500x500")
+        button = Button(self.base, text="Controls", command=controls,bg='grey', font=("Verdana", 15,"underline"), fg='orange',relief = 'flat')
+        button.pack()
         self.base.pack(fill=X)
 
         #Make gap between top label and sudoku grid or we can use place instead of this 
@@ -328,11 +333,115 @@ class game:
         checkered(w,40)
  
         self.for_grid_frame.pack(after = self.gap,anchor = 'w',padx='300')
+
+
+        #command for button
+        def cm_normal():
+            no1.config(text="1")
+            no2.config(text="2")
+            no3.config(text="3")
+            no4.config(text="4")
+            no5.config(text="5")
+            no6.config(text="6")
+            no7.config(text="7")
+            no8.config(text="8")
+            no9.config(text="9")
+
+            lab1.config(text="")
+            lab2.config(text="")
+            lab3.config(text="")
+            lab4.config(text="")
+            lab5.config(text="")
+            lab6.config(text="")
+            lab7.config(text="")
+            lab8.config(text="")
+            lab9.config(text="")
+
+            lab1.place(x=1001,y=201)
+            lab2.place(x=1061,y=201)
+            lab3.place(x=1121,y=201)
+            lab4.place(x=1001,y=251)
+            lab5.place(x=1061,y=251)
+            lab6.place(x=1121,y=251)
+            lab7.place(x=1001,y=301)
+            lab8.place(x=1061,y=301)
+            lab9.place(x=1121,y=301)
+            
+            normal.config(bg='purple',fg='white')
+            corner.config(fg='purple',bg='white')
+            center.config(fg='purple',bg='white')
+
+        def cm_corner():
+            no1.config(text="")
+            no2.config(text="")
+            no3.config(text="")
+            no4.config(text="")
+            no5.config(text="")
+            no6.config(text="")
+            no7.config(text="")
+            no8.config(text="")
+            no9.config(text="")
+
+            lab1.config(text='1')
+            lab2.config(text='2')
+            lab3.config(text='3')
+            lab4.config(text='4')
+            lab5.config(text='5')
+            lab6.config(text='6')
+            lab7.config(text='7')
+            lab8.config(text='8')
+            lab9.config(text='9')
+            lab1.place(x=1001,y=201)
+            lab2.place(x=1078,y=201)
+            lab3.place(x=1149,y=201)
+            lab4.place(x=1001,y=251)
+            lab5.place(x=1078,y=251)
+            lab6.place(x=1149,y=251)
+            lab7.place(x=1001,y=301)
+            lab8.place(x=1078,y=301)
+            lab9.place(x=1149,y=301)
+
+            corner.config(bg='purple',fg='white')
+            normal.config(fg='purple',bg='white')
+            center.config(fg='purple',bg='white')
+
+        def cm_center():
+            no1.config(text="")
+            no2.config(text="")
+            no3.config(text="")
+            no4.config(text="")
+            no5.config(text="")
+            no6.config(text="")
+            no7.config(text="")
+            no8.config(text="")
+            no9.config(text="")
+
+            lab1.config(text='1')
+            lab1.place(x=1018,y=210)
+            lab2.config(text='2')
+            lab2.place(x=1077,y=210)
+            lab3.config(text='3')
+            lab3.place(x=1137,y=210)
+            lab4.config(text='4')
+            lab4.place(x=1018,y=260)
+            lab5.config(text='5')
+            lab5.place(x=1077,y=260)
+            lab6.config(text='6')
+            lab6.place(x=1137,y=260)
+            lab7.config(text='7')
+            lab7.place(x=1018,y=310)
+            lab8.config(text='8')
+            lab8.place(x=1077,y=310)
+            lab9.config(text='9')
+            lab9.place(x=1137,y=310)
+            center.config(bg='purple',fg='white')
+            corner.config(fg='purple',bg='white')
+            normal.config(fg='purple',bg='white')
         
         #here the big buttons came with their placement
-        normal = Button(text = "Normal" , fg='purple' , font=("Verdana",14,'bold'),width = 7)
-        corner = Button(text = "Corner" , fg='purple' , font=("Verdana",14,'bold'),width = 7) 
-        center = Button(text = "Center" , fg='purple' , font=("Verdana",14,'bold'),width = 7)
+        normal = Button(text = "Normal" , fg='purple' , font=("Verdana",14,'bold'),width = 7,command=cm_normal)
+        corner = Button(text = "Corner" , fg='purple' , font=("Verdana",14,'bold'),width = 7,command=cm_corner) 
+        center = Button(text = "Center" , fg='purple' , font=("Verdana",14,'bold'),width = 7,command=cm_center)
         colour = Button(text = "Colour" , fg='purple' , font=("Verdana",14,'bold'),width = 7)
         delete = Button(text = "Delete" , fg='purple' , font=("Verdana",14,'bold'),width = 12)
         undo = Button(text = "Undo" , fg='purple' , font=("Verdana",14,'bold'),width = 10)
@@ -369,6 +478,17 @@ class game:
         no7.place(x=1000,y=300)
         no8.place(x=1060,y=300)
         no9.place(x=1120,y=300)
+        
+        #labels of nos
+        lab1=Label(root,text='1',font=("Verdana",9,'bold'),bg='purple',fg='white')
+        lab2=Label(root,text='2',font=("Verdana",9,'bold'),bg='purple',fg='white')
+        lab3=Label(root,text='3',font=("Verdana",9,'bold'),bg='purple',fg='white')
+        lab4=Label(root,text='4',font=("Verdana",9,'bold'),bg='purple',fg='white')
+        lab5=Label(root,text='5',font=("Verdana",9,'bold'),bg='purple',fg='white')
+        lab6=Label(root,text='6',font=("Verdana",9,'bold'),bg='purple',fg='white')
+        lab7=Label(root,text='7',font=("Verdana",9,'bold'),bg='purple',fg='white')
+        lab8=Label(root,text='8',font=("Verdana",9,'bold'),bg='purple',fg='white')
+        lab9=Label(root,text='9',font=("Verdana",9,'bold'),bg='purple',fg='white')
         
         # to give the frame some weight to look better
         self.gap = Frame(root,height=200)
@@ -475,7 +595,7 @@ class game:
         self.sudoku_values[8][8]= self.entry_in_index89.get("1.0",'end-1c')
         for i in range(9):
             for j in range(9):
-                print(self.sudoku_values[i][j], end = ' ')
+                print(self.sudoku_values[i][j],"",end = " ")
             print()            
 
 #starting of tkinter
