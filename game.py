@@ -101,43 +101,7 @@ class game:
                                         if(temp==list1[k][l] and k!=i and k!=j):
                                             list1[i][j]=0
                                             break             
-        list1 = [[0,0,0,0,0,0,0,0,0] for j in range(9)]
-
-        list1[0][0]=9
-        list1[0][4]=6
-        list1[0][6]=4
-        list1[1][2]=2
-        list1[1][8]=1
-        list1[2][1]=7
-        list1[2][6]=2
-        list1[3][0]=8
-        list1[3][4]=3
-        list1[3][7]=2
-        list1[3][8]=4
-        list1[4][1]=2
-        list1[4][5]=1
-        list1[4][7]=6
-        list1[5][0]=1
-        list1[5][2]=5
-        list1[6][1]=9
-        list1[6][4]=5
-        list1[7][3]=1
-        list1[7][5]=3
-        list1[7][7]=4
-        list1[8][0]=6
-        list1[8][6]=7
         
-        '''
-        9 0 0 0 6 0 4 0 0
-		0 0 2 0 0 0 0 0 1   
-		0 7 0 0 0 0 2 0 0
-		8 0 0 0 3 0 0 2 4
-		0 2 0 0 0 1 0 6 0
-		1 0 5 0 0 0 0 0 0
-		0 9 0 0 5 0 0 0 0
-		0 0 0 1 0 3 0 4 0
-		6 0 0 0 0 0 7 0 0
-        ''' 
         #initializing the values 
         self.sudoku_values = [[0,0,0,0,0,0,0,0,0,0] for i in range(9)]
         self.entry_in_index01 = IntVar()
