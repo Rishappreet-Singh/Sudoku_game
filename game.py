@@ -37,71 +37,107 @@ class game:
                     for m in range(9):
                         if (temp == list1[m][j] and i!=m):
                             list1[m][j]=0
-                            break;
+                            break 
                         else :    
                             if(i<3 and j<3):
                                 for k in range(3):
                                     for l in range(3):                            
                                         if(temp==list1[k][l] and k!=i and k!=j):
                                             list1[i][j]=0
-                                            break;
+                                            break 
                                                 
                             elif(i<3 and j<6):
                                 for k in range(3):
                                     for l in range(3,6):                            
                                         if(temp==list1[k][l] and k!=i and k!=j):
                                             list1[i][j]=0
-                                            break;
+                                            break 
                             
                             elif (i<3 and j<9):
                                 for k in range(3):
                                     for l in range(6,9):                            
                                         if(temp==list1[k][l] and k!=i and k!=j):
                                             list1[i][j]=0
-                                            break;
+                                            break 
                                 
                             elif (i<6 and j<3):
                                 for k in range(3,6):
                                     for l in range(3):                            
                                         if(temp==list1[k][l] and k!=i and k!=j):
                                             list1[i][j]=0
-                                            break;
+                                            break 
                             
                             elif (i<6 and j<6):                   
                                 for k in range(3,6):
                                     for l in range(3,6):                            
                                         if(temp==list1[k][l] and k!=i and k!=j):
                                             list1[i][j]=0
-                                            break;
+                                            break 
 
                             elif (i<6 and j<9):
                                 for k in range(3,6):
                                     for l in range(6,9):                            
                                         if(temp==list1[k][l] and k!=i and k!=j):
                                             list1[i][j]=0
-                                            break;
+                                            break 
                             
                             elif (i<9 and j<3):
                                 for k in range(6,9):
                                     for l in range(3):                            
                                         if(temp==list1[k][l] and k!=i and k!=j):
                                             list1[i][j]=0
-                                            break;
+                                            break 
                             
                             elif (i<9 and j<6):
                                 for k in range(6,9):
                                     for l in range(3,6):                            
                                         if(temp==list1[k][l] and k!=i and k!=j):
                                             list1[i][j]=0
-                                            break;
+                                            break 
                             
                             elif (i<9 and j<9):
                                 for k in range(6,9):
                                     for l in range(6,9):                            
                                         if(temp==list1[k][l] and k!=i and k!=j):
                                             list1[i][j]=0
-                                            break;            
+                                            break             
+        list1 = [[0,0,0,0,0,0,0,0,0] for j in range(9)]
+
+        list1[0][0]=9
+        list1[0][4]=6
+        list1[0][6]=4
+        list1[1][2]=2
+        list1[1][8]=1
+        list1[2][1]=7
+        list1[2][6]=2
+        list1[3][0]=8
+        list1[3][4]=3
+        list1[3][7]=2
+        list1[3][8]=4
+        list1[4][1]=2
+        list1[4][5]=1
+        list1[4][7]=6
+        list1[5][0]=1
+        list1[5][2]=5
+        list1[6][1]=9
+        list1[6][4]=5
+        list1[7][3]=1
+        list1[7][5]=3
+        list1[7][7]=4
+        list1[8][0]=6
+        list1[8][6]=7
         
+        '''
+        9 0 0 0 6 0 4 0 0
+		0 0 2 0 0 0 0 0 1   
+		0 7 0 0 0 0 2 0 0
+		8 0 0 0 3 0 0 2 4
+		0 2 0 0 0 1 0 6 0
+		1 0 5 0 0 0 0 0 0
+		0 9 0 0 5 0 0 0 0
+		0 0 0 1 0 3 0 4 0
+		6 0 0 0 0 0 7 0 0
+        ''' 
         #initializing the values 
         self.sudoku_values = [[0,0,0,0,0,0,0,0,0,0] for i in range(9)]
         self.entry_in_index01 = IntVar()
@@ -1126,22 +1162,22 @@ Sudoku is a fun puzzle game once you get the hang of it 😍❤!
                 for j in range(9):
                     if(list1[i][j]==0):
                         error()
-                        return 1;
+                        return 1 
                     
                     else:
-                        passer=0;
-                        temp= list1[i][j];
+                        passer=0 
+                        temp= list1[i][j] 
                         for k in range(9):
                         
                             if(temp==list1[i][k] and k!=j):
                                 error()
-                                passer=1;
-                                return 1;
+                                passer=1 
+                                return 1 
                             
                             if(temp == list1[k][j] and k!=i):
                                 error()
-                                passer=1;
-                                return 1;
+                                passer=1 
+                                return 1 
                         
                         if(passer==0):
                             if(i<3 and j<3):
@@ -1149,74 +1185,74 @@ Sudoku is a fun puzzle game once you get the hang of it 😍❤!
                                     for l in range(3):
                                         if(temp==list1[k][l] and k!=i and k!=j):
                                             error()
-                                            return 1;
+                                            return 1 
                             
                             elif(i<3 and j<6):
                                 for k in range(3):
                                     for l in range(3,6):
                                         if(temp==list1[k][l] and k!=i and k!=j):
                                             error()
-                                            return 1;
+                                            return 1 
                             
                             elif (i<3 and j<9):
                                 for k in range(3):
                                     for l in range(6,9):
                                         if(temp==list1[k][l] and k!=i and k!=j):
                                             error()
-                                            return 1;
+                                            return 1 
 
                             elif (i<6 and j<3):
                                 for k in range(3,6):
                                     for l in range(3):
                                         if(temp==list1[k][l] and k!=i and k!=j):
                                             error()
-                                            return 1;
+                                            return 1 
                             
                             elif (i<6 and j<6):
                                 for k in range(3,6):
                                     for l in range(3,6):    
-                                        if(temp==list[k][l] and k!=i and k!=j):
+                                        if(temp==list1[k][l] and k!=i and k!=j):
                                             error()
-                                            return 1;
+                                            return 1 
                            
                             elif (i<6 and j<9):
                                 for k in range(3,6):
                                     for l in range(6,9):
                                         if(temp==list1[k][l] and k!=i and k!=j):
                                             error()
-                                            return 1;
+                                            return 1 
                                                                        
                             elif (i<9 and j<3):
                                 for k in range(6,9):
                                     for l in range(3):
                                         if(temp==list1[k][l] and k!=i and k!=j):
                                             error()
-                                            return 1;
+                                            return 1 
                             
                             elif (i<9 and j<6):
                                 for k in range(6,9):
                                     for l in range(3,6):    
                                         if(temp==list1[k][l] and k!=i and k!=j):
                                             error()
-                                            return 1;
+                                            return 1 
                             
                             elif (i<9 and j<9):
                                 for k in range(6,9):
                                     for l in range(6,9):        
                                         if(temp==list1[k][l] and k!=i and k!=j):
                                             error()
-                                            return 1;
+                                            return 1 
                             
                             if (i == 8 and j==8):
-                                key =1;
+                                key =1 
                             
                         else:
-                            return 1;
+                            error()
+                            return 1 
                 
-                if(key==1):
-                    right()
-                                            
-                return 0;
+            if(key==1):
+                right()
+            return 0 
         
         last_answer(self.sudoku_values)
 
